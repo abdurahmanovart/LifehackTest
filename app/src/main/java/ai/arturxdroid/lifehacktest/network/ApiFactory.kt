@@ -33,5 +33,5 @@ object ApiFactory {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val nutritionApi = retrofit().create(LifehackAPI::class.java)
+    val lifehackApi = retrofit().create(LifehackAPI::class.java)
 }
