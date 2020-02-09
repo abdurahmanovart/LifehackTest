@@ -1,5 +1,6 @@
-package ai.arturxdroid.lifehacktest
+package ai.arturxdroid.lifehacktest.ui
 
+import ai.arturxdroid.lifehacktest.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
