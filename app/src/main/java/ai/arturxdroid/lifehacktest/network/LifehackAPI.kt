@@ -1,7 +1,7 @@
 package ai.arturxdroid.lifehacktest.network
 
-import ai.arturxdroid.lifehacktest.data.CompaniesResponse
 import ai.arturxdroid.lifehacktest.data.CompanyFullInfo
+import ai.arturxdroid.lifehacktest.data.CompanyShortInfo
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -9,8 +9,8 @@ import retrofit2.http.Query
 interface LifehackAPI {
 
     @GET("test.php")
-    fun getCompanies(): Response<CompaniesResponse>
+    suspend fun getCompanies(): Response<List<CompanyShortInfo>>
 
     @GET("test.php")
-    fun getCompany(@Query("id") id: String): Response<CompanyFullInfo>
+    suspend fun getCompany(@Query("id") id: String): Response<List<CompanyFullInfo>>
 }
