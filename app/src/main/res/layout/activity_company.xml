@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="CompanyActivityBinding">
+
+        <import type="android.view.View" />
+
+        <variable
+            name="company"
+            type="ai.arturxdroid.lifehacktest.data.CompanyFullInfo" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/name_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@{company.name}"
+            bind:layout_constraintEnd_toEndOf="parent"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@+id/company_image_view" />
+
+        <ImageView
+            android:id="@+id/company_image_view"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="24dp"
+            bind:imageUrl="@{company.img}"
+            bind:layout_constraintEnd_toEndOf="parent"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/web_url_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{company.www}"
+            android:visibility="@{company.www.length()>0?View.VISIBLE:View.GONE}"
+            bind:layout_constraintTop_toBottomOf="@+id/description_text_view"
+            tools:layout_editor_absoluteX="-16dp" />
+
+        <TextView
+            android:id="@+id/description_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text='@{company.description}'
+            bind:layout_constraintStart_toStartOf="parent"
+            android:visibility="@{company.description.length()>0?View.VISIBLE:View.GONE}"
+
+            bind:layout_constraintTop_toBottomOf="@+id/name_text_view" />
+
+        <TextView
+            android:id="@+id/phone_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{company.phone.length()>0?View.VISIBLE:View.GONE}"
+            android:layout_marginTop="16dp"
+            android:text='@{"phone:"+company.phone}'
+            bind:layout_constraintEnd_toEndOf="parent"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@+id/web_url_text_view" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -27,12 +27,15 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra(CompanyActivity.EXTRA_ID, companyItem.companyShortInfo.id)
             startActivity(intent)
         }
+
         recycler_view.adapter = adapter
         viewModel.companies.observe(this, Observer { list ->
             val companiesList = list.map { CompanyShortInfoItem(it) }
             adapter.clear()
             adapter.addAll(companiesList)
         })
+
+        viewModel.fetchCompanies()
 
     }
 }

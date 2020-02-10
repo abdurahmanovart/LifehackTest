@@ -16,7 +16,7 @@ class MainViewModel(val repository: LifehackRepository) : ViewModel() {
 
     fun fetchCompanies() {
         viewModelScope.launch {
-            _companies.value = repository.getCompanies()?.list
+            _companies.value = repository.getCompanies()
         }
     }
 }

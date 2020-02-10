@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LifehackTest</string>
+    <string name="error">Ошибка получения данных с сервера</string>
 </resources>
