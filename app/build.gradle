@@ -36,7 +36,7 @@ android {
 }
 
 def lifecycle_version = "2.2.0"
-def koin_version= "2.0.1"
+def koin_version = "2.0.1"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -46,6 +46,10 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
+
+    //Dagger
+    implementation 'com.google.dagger:dagger:2.15'
+    kapt 'com.google.dagger:dagger-compiler:2.9'
 
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.7.0'
@@ -76,9 +80,9 @@ dependencies {
         exclude group: "com.android.support"
     }
 
-    // Koin AndroidX Scope feature
-    implementation "org.koin:koin-androidx-scope:$koin_version"
-    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    //KTX
+    implementation "androidx.fragment:fragment-ktx:1.2.1"
+    implementation "androidx.activity:activity-ktx:1.1.0"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

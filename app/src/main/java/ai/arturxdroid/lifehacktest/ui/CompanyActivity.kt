@@ -7,11 +7,11 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.activity_company.*
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CompanyActivity : AppCompatActivity() {
 
@@ -19,7 +19,7 @@ class CompanyActivity : AppCompatActivity() {
         const val EXTRA_ID = "extra_id"
     }
 
-    val viewModel: CompanyViewModel by viewModel()
+    val viewModel: CompanyViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
